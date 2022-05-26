@@ -19,6 +19,14 @@ describe('factorialSimple', function() {
     it('should return 6 when called with number 3', function() {
         expect(factorial.factorialSimple(3)).to.be.equal(6);
     });
+
+    it('flaky should return 6 when called with number 3', function() {
+        let val = factorial.factorialSimple(3)
+        if (Math.floor(Math.random() * 2) == 0) {
+            val = 1
+        }
+        expect(val).to.be.equal(6);
+    });
     
     it('[duplicate] should return 6 when called with number 3', function() {
         expect(factorial.factorialSimple(3)).to.be.equal(6);
